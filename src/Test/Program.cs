@@ -42,7 +42,7 @@ namespace Test
         private static void TestBarcode()
         {
             var pngPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestBarcode.png");
-            ImageUtil.BarCodeUtil.Encode("https://www.baidu.com", pngPath);
+            ImageUtil.BarCodeUtil.Encode("https://github.com/jackletter/ImageUtil", pngPath);
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>ImageUtil</id>
+    <version>1.0.0</version>
+    <title></title>
+    <authors>jackletter</authors>
+    <owners>jackletter</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/jackletter/ImageUtil</projectUrl>
+    <description>c#中常见的图片处理工具集,，包括验证码、条形码、二维码、图片水印、图片缩放等常用功能，支持.net4.0和.net standard2.0</description>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="ThoughtWorks.QRCode" version="1.1.0" />
+        <dependency id="ZXing.Net" version="0.16.5" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="ThoughtWorks.QRCode.Core" version="1.0.1.2" />
+        <dependency id="ZXing.Net" version="0.16.5" />
+        <dependency id="ZXing.Net.Bindings.Windows.Compatibility" version="0.16.6" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

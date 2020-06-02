@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImageUtil.Standard</name>
+    </assembly>
+    <members>
+        <member name="T:ImageUtil.BarCodeUtil">
+            <summary>
+            条形码帮助类
+            </summary>
+        </member>
+        <member name="M:ImageUtil.BarCodeUtil.Encode(System.String,System.String,System.Int32,System.Boolean,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            生成条形码
+            </summary>
+            <param name="content">编码的内容字符串</param>
+            <param name="filePath">生成的图片保存路径</param>
+            <param name="margin">生成图片白色边框宽度,默认无</param>
+            <param name="pureBarcode">是否是纯条形码,false表示图片底部显示content,默认true</param>
+            <param name="height">生成图片的高度,默认50</param>
+            <param name="width">生成图片的宽度</param>
+        </member>
+        <member name="T:ImageUtil.EnumLocation">
+            <summary>
+            水印位置
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.LeftTop">
+            <summary>
+            左上角
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.Top">
+            <summary>
+            上边中间
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.RightTop">
+            <summary>
+            右上角
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.LeftCenter">
+            <summary>
+            左侧中间
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.Center">
+            <summary>
+            正中
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.RightCenter">
+            <summary>
+            右侧中间
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.LeftBottom">
+            <summary>
+            左下角
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.Bottom">
+            <summary>
+            底部中间
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLocation.RightBottom">
+            <summary>
+            右下角
+            </summary>
+        </member>
+        <member name="T:ImageUtil.EnumZoomModel">
+            <summary>
+            缩放模式
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumZoomModel.FillWidth">
+            <summary>
+            缩放到宽度全部填满
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumZoomModel.FillHeight">
+            <summary>
+            缩放到高度全部填满
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumZoomModel.FillAll">
+            <summary>
+            缩放到高度和宽度全部填满
+            </summary>
+        </member>
+        <member name="T:ImageUtil.ImageProcess">
+            <summary>
+            图片处理类
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.Save(System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            保存图片
+            </summary>
+            <param name="destPath">保存图片的路径</param>
+            <param name="format">要保存的图片格式</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.#ctor(System.String)">
+            <summary>
+            使用源图片路径初始化图片处理器
+            </summary>
+            <param name="srcImg">源图片路径</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.Thumbnail(System.Int32)">
+            <summary>
+            生成缩略图
+            </summary>
+            <param name="width">缩略图宽度</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.ImageWatermark(System.String,ImageUtil.EnumLocation)">
+            <summary>
+            图片水印处理方法
+            </summary>
+            <param name="waterpath">水印图片（绝对路径）</param>
+            <param name="location">水印位置（传送正确的代码）</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.GetLocation(ImageUtil.EnumLocation,System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            水印位置计算
+            </summary>
+            <param name="location">水印位置</param>
+            <param name="img">需要添加水印的图片</param>
+            <param name="waterWidth">水印宽度</param>
+            <param name="waterHeight">水印高度</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.LetterWatermark(System.String,System.Drawing.Font,System.Drawing.Color,ImageUtil.EnumLocation)">
+            <summary>
+            文字水印处理方法
+            </summary>
+            <param name="font">字体</param>
+            <param name="letter">水印文字</param>
+            <param name="color">颜色</param>
+            <param name="location">水印位置</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.DeepColor(System.Double)">
+            <summary>
+            调整颜色明暗度(其实就是对RGB的每个颜色值做相同的加减)
+            </summary>
+            <param name="addPercent">增加或减少的光暗值(-1,1)</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.ReverseColor">
+            <summary>
+            反色处理
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.Carve">
+            <summary>
+            浮雕处理
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.Stretch(System.Int32,System.Int32)">
+            <summary>
+            拉伸图片
+            </summary>
+            <param name="newW">新的宽度</param>
+            <param name="newH">新的高度</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.RemoveColorChanel(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            滤色处理
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.MakeTransparent(System.Drawing.Color)">
+            <summary>
+            将指定的颜色透明处理
+            </summary>
+            <param name="color">要透明化处理的颜色</param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.MakeOpacity(System.Double)">
+            <summary>
+            将当前图片进行整体透明处理
+            </summary>
+            <param name="percent">相对于当前的变化比例(-1,1)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.RemoveOpacity">
+            <summary>
+            移除图片的透明度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.ReverseLeftRight">
+            <summary>
+            左右翻转
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.ReverseTopBottom">
+            <summary>
+            上下翻转
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.Gray">
+            <summary>
+            图片灰度化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.BlackWhite">
+            <summary>
+            转换为黑白图片
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.SplitGif(System.String,System.String)">
+            <summary>
+            将gif图片按每帧进行切割,并返回切分好的图片
+            </summary>
+            <param name="pPath">图片路径</param>
+            <param name="pSavedPath">保存路径</param>
+        </member>
+        <member name="M:ImageUtil.ImageProcess.Zoom(System.Int32,System.Int32,ImageUtil.EnumZoomModel)">
+            <summary>
+            按缩放模式等比例缩放图片
+            </summary>
+            <param name="newW">目标宽度</param>
+            <param name="newH">目标高度</param>
+            <param name="zoomModel">缩放模式</param>
+            <returns></returns>
+        </member>
+        <member name="T:ImageUtil.EnumSizeMode">
+            <summary>
+            二维码的尺寸选项
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumSizeMode.Stretch">
+            <summary>
+            将生成的二维码进行缩放以满足目标尺寸
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumSizeMode.Pure">
+            <summary>
+            将生成的二维码直接输出(这意味着,生成的二维码的大小将最接近但不大于目标大小)
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumSizeMode.WhiteBorderFill">
+            <summary>
+            将生成的二维码进行白边填充以满足目标尺寸
+            </summary>
+        </member>
+        <member name="T:ImageUtil.QRCodeUtil">
+            <summary>
+            二维码工具类
+            </summary>
+        </member>
+        <member name="M:ImageUtil.QRCodeUtil.Encode(System.String,System.String,System.Int32,ImageUtil.EnumSizeMode,System.String,System.Boolean)">
+            <summary>
+            生成二维码图片
+            </summary>
+            <param name="str">内容字符串</param>
+            <param name="maxSize">生成的图片大小,图片宽度以像素为单位(默认100)</param>
+            <param name="enumSizeMode">二维码大小模式(默认进行缩放已适应maxSize)</param>
+            <param name="filePath">生成的二维码图片路径</param>
+            <param name="backImgPath">中心图标路径(如果没有找到图标就忽略)</param>
+            <param name="zoomBackImg">是否缩放背景图片(默认进行缩放)</param>
+        </member>
+        <member name="M:ImageUtil.QRCodeUtil.AddCenterImage(System.Drawing.Image,System.Int32,System.String,System.Boolean)">
+            <summary>    
+            向生成的二维码图片中增加中心图片  
+            </summary>    
+            <param name="qrImg">二维码图片</param> 
+            <param name="actualSize">原二维码图片的实际内容大小</param>   
+            <param name="backImg">要粘贴进来的图片</param>    
+            <param name="zoomBackImg">是否缩放背景图片以适应二维码大小</param>    
+        </member>
+        <member name="M:ImageUtil.QRCodeUtil.CreateQRCode(System.String,ThoughtWorks.QRCode.Codec.QRCodeEncoder.ENCODE_MODE,ThoughtWorks.QRCode.Codec.QRCodeEncoder.ERROR_CORRECTION,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            生成二维码
+            </summary>
+            <param name="Content">内容文本</param>
+            <param name="QRCodeEncodeMode">二维码编码方式</param>
+            <param name="QRCodeErrorCorrect">纠错码等级</param>
+            <param name="QRCodeVersion">二维码版本号 0-40,一般使用8</param>
+            <param name="QRCodeScale">每个小方格的预设宽度（像素），正整数</param>
+            <param name="size">图片尺寸（像素），0表示不设置</param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageUtil.QRCodeUtil.ResizeImage(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>    
+            Resize图片    
+            </summary>    
+            <param name="bmp">原始Bitmap</param>    
+            <param name="newW">新的宽度</param>    
+            <param name="newH">新的高度</param>    
+            <returns>处理以后的图片</returns>    
+        </member>
+        <member name="T:ImageUtil.Rand">
+            <summary>
+            随机生成数字或字母
+            </summary>
+        </member>
+        <member name="M:ImageUtil.Rand.Next(System.Int32)">
+            <summary>
+            获得下一个随机数
+            </summary>
+            <param name="max">最大值</param>
+        </member>
+        <member name="M:ImageUtil.Rand.Next(System.Int32,System.Int32)">
+            <summary>
+            根据最大值和最小值随机生成一个数
+            </summary>
+            <param name="min">最小值</param>
+            <param name="max">最大值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageUtil.Rand.RandNumber(System.Int32)">
+            <summary>
+            生成随机(数字)
+            </summary>
+            <param name="len">生成长度</param>
+        </member>
+        <member name="M:ImageUtil.Rand.RandNumber(System.Int32,System.Boolean)">
+            <summary>
+            生成随机(数字)
+            </summary>
+            <param name="len">生成长度</param>
+            <param name="isSleep">是否要在生成前将当前线程阻止以避免重复</param>
+        </member>
+        <member name="M:ImageUtil.Rand.RandString(System.Int32)">
+            <summary>
+            生成随机(字母)
+            </summary>
+            <param name="len">生成长度</param>
+        </member>
+        <member name="M:ImageUtil.Rand.RandString(System.Int32,System.Boolean)">
+            <summary>
+            生成随机(字母)
+            </summary>
+            <param name="len">生成长度</param>
+            <param name="isSleep">是否要在生成前将当前线程阻止以避免重复</param>
+        </member>
+        <member name="M:ImageUtil.Rand.RandStringAndNumber(System.Int32)">
+            <summary>
+            生成随机(字母+数字)
+            </summary>
+            <param name="len">生成长度</param>
+        </member>
+        <member name="M:ImageUtil.Rand.RandStringAndNumber(System.Int32,System.Boolean)">
+            <summary>
+            生成随机(字母+数字)
+            </summary>
+            <param name="len">生成长度</param>
+            <param name="isSleep">是否要在生成前将当前线程阻止以避免重复</param>
+        </member>
+        <member name="T:ImageUtil.EnumLevel">
+            <summary>
+            验证码难度
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLevel.Low">
+            <summary>
+            低
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLevel.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:ImageUtil.EnumLevel.High">
+            <summary>
+            高
+            </summary>
+        </member>
+        <member name="T:ImageUtil.ValidateCodeOption">
+            <summary>
+            生成随机验证码的选项
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeOption.Level">
+            <summary>
+            验证码难度
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeOption.MixLetters">
+            <summary>
+            是否混合字母
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeOption.Text">
+            <summary>
+            指定的随机验证码
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeOption.LetterCount">
+            <summary>
+            验证码位数
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeOption.LetterHeight">
+            <summary>
+            单个字体的高度范围
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeOption.Fonts">
+            <summary>
+            字体范围
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeOption.Default">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="T:ImageUtil.ValidateCodeUtil">
+            <summary>
+            验证图片类
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeUtil.Option">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeUtil.Bitmap">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:ImageUtil.ValidateCodeUtil.Text">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ValidateCodeUtil.CreateImage">
+            <summary>
+            绘制验证码
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ValidateCodeUtil.GetFontRandomColor">
+            <summary>
+            字体随机颜色
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ValidateCodeUtil.GetLineRandomColor">
+            <summary>
+            字体随机颜色
+            </summary>
+        </member>
+        <member name="M:ImageUtil.ValidateCodeUtil.TwistImage(System.Drawing.Bitmap,System.Boolean,System.Double,System.Double)">
+            <summary>
+            正弦曲线Wave扭曲图片
+            </summary>
+            <param name="srcBmp">图片路径</param>
+            <param name="bXDir">如果扭曲则选择为True</param>
+            <param name="dMultValue">波形的幅度倍数，越大扭曲的程度越高,一般为3</param>
+            <param name="dPhase">波形的起始相位,取值区间[0-2*PI)</param>
+        </member>
+        <member name="M:ImageUtil.ValidateCodeUtil.Generate(System.String)">
+            <summary>
+            快捷生成验证码
+            </summary>
+            <param name="filePath">生成的图片的存放路径</param>
+            <returns>生成的验证字符串</returns>
+        </member>
+        <member name="M:ImageUtil.ValidateCodeUtil.Generate(System.String,ImageUtil.ValidateCodeOption)">
+            <summary>
+            快捷生成验证码
+            </summary>
+            <param name="filePath">生成的图片的存放路径</param>
+            <param name="option">配置</param>
+            <returns>生成的验证字符串</returns>
+        </member>
+    </members>
+</doc>
