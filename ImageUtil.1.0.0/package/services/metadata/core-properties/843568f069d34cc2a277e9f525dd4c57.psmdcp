@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
-  <dc:creator>jackletter</dc:creator>
-  <dc:description>c#中常见的图片处理工具集,，包括验证码、条形码、二维码、图片水印、图片缩放等常用功能，支持.net4.0和.net standard2.0</dc:description>
-  <dc:identifier>ImageUtil</dc:identifier>
-  <version>1.0.0</version>
-  <keywords></keywords>
-  <lastModifiedBy>NuGet.Packaging, Version=4.8.0.6, Culture=neutral, PublicKeyToken=31bf3856ad364e35;Microsoft Windows NT 6.2.9200.0;.NET Framework 4.6</lastModifiedBy>
-</coreProperties>
