@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>ImageUtil.Standard</name>
+        <name>ImageUtil</name>
     </assembly>
     <members>
         <member name="T:ImageUtil.BarCodeUtil">
