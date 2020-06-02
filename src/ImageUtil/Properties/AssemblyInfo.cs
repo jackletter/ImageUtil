@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("ImageUtil")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("c#中常见的图片处理工具集,，包括验证码、条形码、二维码、图片水印、图片缩放等常用功能，支持.net4.0和.net standard2.0")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("jackletter")]
 [assembly: AssemblyProduct("ImageUtil")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]

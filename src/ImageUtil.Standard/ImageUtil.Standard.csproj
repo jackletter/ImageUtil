@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>jackletter</Authors>
+    <Company>jackletterjackletter</Company>
+    <Product>ImageUtil</Product>
+    <Description>c#中常见的图片处理工具集,，包括验证码、条形码、二维码、图片水印、图片缩放等常用功能，支持.net4.0和.net standard2.0</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\jackletter\github\ImageUtil\src\ImageUtil.Standard\ImageUtil.Standard.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
