@@ -8,6 +8,9 @@ using System.Text;
 using ZXing;
 using ZXing.Common;
 using ZXing.Rendering;
+#if NETSTANDARD2_0
+using ZXing.Windows.Compatibility;
+#endif
 
 namespace ImageUtil
 {
@@ -53,3 +56,4 @@ namespace ImageUtil
         #endregion
     }
 }
+
